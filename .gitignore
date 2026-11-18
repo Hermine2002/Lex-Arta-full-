@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.output/
+.nitro/
+.vinxi/
+
+# Local admin data store (enquiries, overrides, settings, sessions, articles)
+data/
+
+# Images uploaded through the admin media picker
+public/uploads/
+
+.DS_Store
+*.local
+.env
+.env.*
+
+# TanStack build cache
+.tanstack/
