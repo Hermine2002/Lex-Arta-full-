@@ -5,10 +5,10 @@ dist/
 .vinxi/
 
 # Local admin data store (enquiries, overrides, settings, sessions, articles)
-data/
+/data/
 
 # Images uploaded through the admin media picker
-public/uploads/
+/public/uploads/
 
 .DS_Store
 *.local
