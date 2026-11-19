@@ -461,6 +461,7 @@
   .page-content :is(.legal-table,table) { display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 }
 @media(max-width:520px) {
+  .services-grid,.mica-entry-grid,.mica-requirements-grid,.credentials-grid { --cols:1; }
   .lx-basic h1,.insights-heading h1 { font-size:36px; line-height:1.1; }
   .process,.process-strip,.review-grid,.component-list,.regulatory-grid,.regulatory-grid.two,.comparison-grid,.outcome-panel,.when-grid { grid-template-columns:1fr; border-left:0; }
   .step { border-right:0; }
