@@ -4,7 +4,8 @@ export const meta: PageMeta = {
   path: "/cookies/",
   title: "Cookie Policy | LEX ARTA",
   heading: "Cookie Policy",
-  description: "How lexarta.co uses necessary browser storage and optional analytics choices.",
+  description:
+    "How lexarta.co uses cookies, browser storage and comparable technologies.",
   heroImage: "/images/cookies-hero-2026.webp",
 };
 
@@ -18,9 +19,11 @@ export default function Page() {
               <div className="hero-copy">
                 <div className="eyebrow">Privacy and technology</div>
                 <h1>Cookie Policy</h1>
-                <p className="hero-lead">How lexarta.co uses cookies and similar technologies.</p>
+                <p className="hero-lead">
+                  Storage and access technologies used on the Website
+                </p>
                 <div className="hero-meta">
-                  <span>Effective date: 29 September 2026</span>
+                  <span>Effective date: 10 November 2026</span>
                   <span>Website operator: Artlex Global LTD</span>
                 </div>
               </div>
@@ -34,83 +37,62 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className="legal-intro">
-          <div className="container inner">
-            <strong>You control optional analytics.</strong>
-            <p>
-              Analytics remains off unless you make a positive choice and a provider has been
-              configured. You can change your choice at any time through Cookie Settings.
-            </p>
-          </div>
-        </section>
         <section className="legal-main">
           <div className="container legal-layout">
             <aside className="toc">
               <h2>On this page</h2>
-              <a href="/cookies/#s-scope">4.1 Scope</a>
-              <a href="/cookies/#s-necessary-storage">4.2 Necessary storage</a>
-              <a href="/cookies/#s-analytics">4.3 Analytics</a>
-              <a href="/cookies/#s-advertising">4.4 Advertising</a>
-              <a href="/cookies/#s-consent-choices">4.5 Consent choices</a>
-              <a href="/cookies/#s-current-inventory">4.6 Current inventory</a>
-              <a href="/cookies/#s-changes-and-contact">4.7 Changes and contact</a>
+              <a href="/cookies/#s-scope-and-controller">
+                1. Scope and controller
+              </a>
+              <a href="/cookies/#s-current-configuration">
+                2. Current configuration
+              </a>
+              <a href="/cookies/#s-optional-technologies">
+                3. Optional technologies
+              </a>
+              <a href="/cookies/#s-managing-choices">4. Managing choices</a>
+              <a href="/cookies/#s-changes">5. Changes</a>
             </aside>
             <article>
-              <section id="s-scope">
-                <div className="caps">4.1</div>
-                <h2>Scope</h2>
+              <section id="s-scope-and-controller">
+                <div className="caps">1</div>
+                <h2>Scope and controller</h2>
                 <p>
-                  This Policy explains how lexarta.co uses cookies and similar storage or access
-                  technologies under PECR and the UK GDPR. It should be read with the{" "}
-                  <a href="/privacy/">Privacy Policy</a>.
+                  This Cookie Policy explains how{" "}
+                  <a href="/">https://www.lexarta.co/</a> (the Website) uses
+                  cookies, browser storage, tags and comparable technologies.
+                  The Website is operated by Artlex Global LTD. Its company
+                  details appear in the{" "}
+                  <a href="/legal-notice/">Legal Notice</a>. Questions may be
+                  sent to{" "}
+                  <a href="mailto:privacy@lexarta.co">privacy@lexarta.co</a>.
+                </p>
+                <p>
+                  This Policy is intended to reflect the Privacy and Electronic
+                  Communications Regulations 2003, the UK GDPR and, for
+                  processing to which EU GDPR applies, applicable EU and Member
+                  State rules on cookies and similar technologies. It should be
+                  read with the <a href="/privacy/">Privacy Notice</a>.
                 </p>
               </section>
-              <section id="s-necessary-storage">
-                <div className="caps">4.2</div>
-                <h2>Necessary storage</h2>
+              <section id="s-current-configuration">
+                <div className="caps">2</div>
+                <h2>Current configuration</h2>
                 <p>
-                  Strictly necessary technologies may operate without consent where the applicable
-                  PECR exception applies. The Website currently uses browser storage to record the
-                  visitor’s consent choice.
-                </p>
-              </section>
-              <section id="s-analytics">
-                <div className="caps">4.3</div>
-                <h2>Analytics</h2>
-                <p>
-                  Analytics is optional and remains disabled by default. No analytics provider is
-                  currently activated on lexarta.co. The consent interface is designed to prevent an
-                  optional analytics provider from loading until the visitor gives a positive
-                  choice.
+                  As at the effective date, Artlex Global LTD's intended Website
+                  configuration does not activate advertising, remarketing,
+                  social-media tracking, audience-building or optional analytics
+                  technologies before the visitor makes a positive choice where
+                  consent is required. The Website must not deploy a technology
+                  that is not accurately described in this Policy and the
+                  applicable consent interface.
                 </p>
                 <p>
-                  Before Plausible Analytics or another provider is enabled, this Policy will be
-                  updated with the provider, technology names, purposes, retention information and
-                  any relevant transfer details.
+                  Strictly necessary storage or access may operate without
+                  consent only where the applicable legal exception applies, for
+                  example where it is necessary for an expressly requested
+                  technical service or to preserve a recorded cookie choice.
                 </p>
-              </section>
-              <section id="s-advertising">
-                <div className="caps">4.4</div>
-                <h2>Advertising</h2>
-                <p>
-                  Advertising, remarketing and cross-site tracking technologies are not activated on
-                  this Website. If they are introduced, the Cookie Policy and consent interface will
-                  be updated before activation.
-                </p>
-              </section>
-              <section id="s-consent-choices">
-                <div className="caps">4.5</div>
-                <h2>Consent choices</h2>
-                <p>
-                  The consent interface gives an equal choice to accept optional analytics, reject
-                  it or manage settings. Refusing analytics does not prevent access to ordinary
-                  Website content. A visitor may revisit the choice through the Cookie settings
-                  button.
-                </p>
-              </section>
-              <section id="s-current-inventory">
-                <div className="caps">4.6</div>
-                <h2>Current inventory</h2>
                 <table className="legal-table">
                   <thead>
                     <tr>
@@ -118,6 +100,7 @@ export default function Page() {
                       <th>Provider</th>
                       <th>Purpose</th>
                       <th>Category</th>
+                      <th>Retention</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -125,23 +108,63 @@ export default function Page() {
                       <td>lexarta_cookie_consent_v1</td>
                       <td>Artlex Global LTD</td>
                       <td>
-                        Browser-storage record of the visitor’s cookie choice. It remains until
-                        changed or browser storage is cleared.
+                        Records the visitor's cookie choice, if the preference
+                        interface is displayed
                       </td>
-                      <td>Necessary</td>
+                      <td>Strictly necessary preference storage</td>
+                      <td>Until changed or browser storage is cleared</td>
+                    </tr>
+                    <tr>
+                      <td>Optional analytics</td>
+                      <td>None active at the effective date</td>
+                      <td>Not applicable</td>
+                      <td>Not applicable</td>
+                      <td>Not applicable</td>
+                    </tr>
+                    <tr>
+                      <td>Advertising or social-media tracking</td>
+                      <td>None active at the effective date</td>
+                      <td>Not applicable</td>
+                      <td>Not applicable</td>
+                      <td>Not applicable</td>
                     </tr>
                   </tbody>
                 </table>
-                <p>No analytics or advertising cookie is currently activated.</p>
               </section>
-              <section id="s-changes-and-contact">
-                <div className="caps">4.7</div>
-                <h2>Changes and contact</h2>
+              <section id="s-optional-technologies">
+                <div className="caps">3</div>
+                <h2>Optional technologies</h2>
                 <p>
-                  This Policy is reviewed when the Website’s hosting, analytics, embedded content,
-                  forms, CRM, marketing or consent technology materially changes. Questions may be
-                  sent to{" "}
-                  <a href="mailto:info@lexarta.co?subject=Cookie%20Policy">info@lexarta.co</a>.
+                  Before optional analytics, advertising, embedded third-party
+                  content, tracking pixels, tags or other non-exempt storage and
+                  access technologies are enabled, Artlex Global LTD will assess
+                  the applicable law, update this Policy and the technology
+                  table, and provide an appropriate consent or objection
+                  mechanism. A refusal must not prevent access to ordinary
+                  Website content except where the relevant technology is
+                  genuinely necessary for a requested feature.
+                </p>
+              </section>
+              <section id="s-managing-choices">
+                <div className="caps">4</div>
+                <h2>Managing choices</h2>
+                <p>
+                  Where a consent interface is shown, visitors may revisit their
+                  choice through the Cookie Settings link or button on the
+                  Website. Browser settings can also be used to delete or block
+                  cookies and browser storage. Blocking strictly necessary
+                  storage may affect the operation of preference controls or
+                  requested Website functions.
+                </p>
+              </section>
+              <section id="s-changes">
+                <div className="caps">5</div>
+                <h2>Changes</h2>
+                <p>
+                  We review this Policy when Website hosting, analytics,
+                  embedded content, forms, CRM, marketing or consent technology
+                  materially changes. Questions may be sent to{" "}
+                  <a href="mailto:privacy@lexarta.co">privacy@lexarta.co</a>.
                 </p>
               </section>
             </article>
@@ -153,7 +176,8 @@ export default function Page() {
               <div>
                 <h2>Questions about this page?</h2>
                 <p>
-                  Contact Artlex Global LTD at <a href="mailto:info@lexarta.co">info@lexarta.co</a>.
+                  Contact Artlex Global LTD at{" "}
+                  <a href="mailto:info@lexarta.co">info@lexarta.co</a>.
                 </p>
               </div>
               <div className="final-cta-actions">

@@ -5,7 +5,7 @@ export const meta: PageMeta = {
   title: "Legal Notice | LEX ARTA",
   heading: "Legal Notice",
   description:
-    "Legal notice for LEX ARTA and Artlex Global LTD, including company, brand and professional-status information.",
+    "Website operator, LEX ARTA brand and entity-separation information for lexarta.co.",
   heroImage: "/images/legal-notice-hero-2026.webp",
 };
 
@@ -20,10 +20,10 @@ export default function Page() {
                 <div className="eyebrow">Legal information</div>
                 <h1>Legal Notice</h1>
                 <p className="hero-lead">
-                  Company, brand and professional-status information for lexarta.co.
+                  Website legal information and entity separation
                 </p>
                 <div className="hero-meta">
-                  <span>Effective date: 29 September 2026</span>
+                  <span>Effective date: 10 November 2026</span>
                   <span>Website operator: Artlex Global LTD</span>
                 </div>
               </div>
@@ -39,11 +39,9 @@ export default function Page() {
         </section>
         <section className="legal-intro">
           <div className="container inner">
-            <strong>Website operator and engagement boundaries.</strong>
             <p>
-              LEX ARTA is a professional services brand. Artlex Global LTD operates lexarta.co; the
-              company contracting for a particular service is identified before the engagement is
-              accepted.
+              This Legal Notice applies to the LEX ARTA website at{" "}
+              <a href="/">https://www.lexarta.co/</a> (the Website).
             </p>
           </div>
         </section>
@@ -51,155 +49,275 @@ export default function Page() {
           <div className="container legal-layout">
             <aside className="toc">
               <h2>On this page</h2>
-              <a href="/legal-notice/#s-website-operator">1.1 Website operator</a>
-              <a href="/legal-notice/#s-lex-arta-brand">1.2 LEX ARTA brand</a>
-              <a href="/legal-notice/#s-contracting-entity">1.3 Contracting entity</a>
-              <a href="/legal-notice/#s-services">1.4 Services</a>
-              <a href="/legal-notice/#s-excluded-services-and-separate-providers">
-                1.5 Excluded services and separate providers
+              <a href="/legal-notice/#s-website-operator">
+                1. Website operator
               </a>
-              <a href="/legal-notice/#s-professional-status">1.6 Professional status</a>
-              <a href="/legal-notice/#s-risk-checks-and-complaints">
-                1.7 Risk checks and complaints
+              <a href="/legal-notice/#s-lex-arta-brand-and-independent-companies">
+                2. LEX ARTA brand and independent companies
               </a>
-              <a href="/legal-notice/#s-data-protection-and-intellectual-property">
-                1.8 Data protection and intellectual property
+              <a href="/legal-notice/#s-enquiries-and-contracting-entity">
+                3. Enquiries and contracting entity
+              </a>
+              <a href="/legal-notice/#s-artlex-global-ltd-services">
+                4. Artlex Global LTD services
+              </a>
+              <a href="/legal-notice/#s-professional-perimeter-and-excluded-services">
+                5. Professional perimeter and excluded services
+              </a>
+              <a href="/legal-notice/#s-subcontractors-and-direct-providers">
+                6. Subcontractors and direct providers
+              </a>
+              <a href="/legal-notice/#s-client-acceptance-and-risk-controls">
+                7. Client acceptance and risk controls
+              </a>
+              <a href="/legal-notice/#s-website-information">
+                8. Website information
+              </a>
+              <a href="/legal-notice/#s-eu-gdpr-representative">
+                9. EU GDPR representative
+              </a>
+              <a href="/legal-notice/#s-intellectual-property-privacy-and-contact">
+                10. Intellectual property, privacy and contact
               </a>
             </aside>
             <article>
               <section id="s-website-operator">
-                <div className="caps">1.1</div>
+                <div className="caps">1</div>
                 <h2>Website operator</h2>
-                <div className="entity-box">
-                  <div>Company</div>
-                  <div>Artlex Global LTD</div>
-                  <div>Company number</div>
-                  <div>17479929</div>
-                  <div>Jurisdiction</div>
-                  <div>England and Wales</div>
-                  <div>Registered office</div>
-                  <div>
-                    Office 2036, 60 Tottenham Court Road, Fitzrovia, London W1T 2EW, United Kingdom
-                  </div>
-                  <div>Website</div>
-                  <div>
-                    <a href="/">lexarta.co</a>
-                  </div>
-                  <div>Contact</div>
-                  <div>
-                    <a href="mailto:info@lexarta.co">info@lexarta.co</a>
-                  </div>
-                </div>
-                <p>This website, lexarta.co, is operated by Artlex Global LTD.</p>
-              </section>
-              <section id="s-lex-arta-brand">
-                <div className="caps">1.2</div>
-                <h2>LEX ARTA brand</h2>
+                <p>The Website is operated by:</p>
                 <p>
-                  LEX ARTA is the professional-services brand owned by Artlex Global LTD. It is a
-                  brand, not a separate legal entity, law firm, regulated financial institution,
-                  contracting party or data controller.
+                  Artlex Global LTD
+                  <br />
+                  Company number: 17479929
+                  <br />
+                  Incorporated in England and Wales
+                  <br />
+                  Registered office: Office 2036, 60 Tottenham Court Road,
+                  Fitzrovia, London W1T 2EW, United Kingdom
+                  <br />
+                  General contact:{" "}
+                  <a href="mailto:info@lexarta.co">info@lexarta.co</a>
                 </p>
                 <p>
-                  Artlex Consult s.r.o. may use LEX ARTA under a separate written licence. Brand use
-                  does not itself create a partnership, branch, agency, joint venture, common
-                  undertaking or joint liability. Each company is responsible only for the
-                  engagements it accepts and its own acts and omissions.
+                  Artlex Global LTD is the Website operator and the controller
+                  of personal data processed through the Website and its own
+                  enquiries, as explained in the{" "}
+                  <a href="/privacy/">Privacy Notice</a>.
                 </p>
               </section>
-              <section id="s-contracting-entity">
-                <div className="caps">1.3</div>
-                <h2>Contracting entity</h2>
+              <section id="s-lex-arta-brand-and-independent-companies">
+                <div className="caps">2</div>
+                <h2>LEX ARTA brand and independent companies</h2>
                 <p>
-                  lexarta.co is operated by Artlex Global LTD, but services available through this
-                  Website may be contracted with Artlex Global LTD or Artlex Consult s.r.o.,
-                  depending on the nature, jurisdiction and agreed scope of the engagement. The
-                  proposed contracting entity is identified before acceptance and is named in the
-                  applicable proposal, engagement letter, statement of work, service agreement or
-                  other written engagement documentation.
+                  LEX ARTA® is a registered trade mark and professional-services
+                  brand owned by Artlex Global LTD. Artlex Consult s.r.o. is an
+                  independent legal entity authorised to use the LEX ARTA® brand
+                  under a separate licence.
                 </p>
                 <p>
-                  An engagement begins only when the identified company accepts the agreed scope in
-                  writing. Website branding, an enquiry, an introduction or participation by another
-                  provider does not make that person or company a party to the engagement.
+                  LEX ARTA® is not a legal person, partnership, corporate group,
+                  law firm, regulated financial institution, contracting party
+                  or data controller. The common brand does not itself create a
+                  partnership, parent-subsidiary relationship, branch, agency,
+                  joint venture, joint controllership, common undertaking or
+                  joint and several liability.
                 </p>
-              </section>
-              <section id="s-services">
-                <div className="caps">1.4</div>
-                <h2>Services</h2>
                 <p>
-                  Artlex Global LTD provides international regulatory, compliance and business
-                  advisory services and non-reserved legal services that it may lawfully provide.
-                  Work may include regulatory and legal analysis, licensing strategy and readiness,
-                  AML/CFT and financial-crime frameworks, governance, data-protection and privacy
-                  advisory, commercial contracts, due diligence, training and market-entry
-                  assessments.
+                  Neither Artlex Global LTD nor Artlex Consult s.r.o. has
+                  authority to bind the other merely because both use the LEX
+                  ARTA® brand. Each entity is responsible only for its own acts,
+                  omissions and engagements that it expressly accepts.
                 </p>
               </section>
-              <section id="s-excluded-services-and-separate-providers">
-                <div className="caps">1.5</div>
-                <h2>Excluded services and separate providers</h2>
+              <section id="s-enquiries-and-contracting-entity">
+                <div className="caps">3</div>
+                <h2>Enquiries and contracting entity</h2>
                 <p>
-                  Neither Artlex Global LTD nor Artlex Consult s.r.o. carries out, sells in its own
-                  name or bundles within its own client engagements company-formation or other
-                  trust-or-company-service-provider activities, registered-office or address
-                  services, corporate-officer, nominee or trustee services, client-money or
-                  share-capital handling, tax advice, bookkeeping, accountancy, statutory audit,
-                  insolvency-practitioner services or reserved legal activities.
+                  An enquiry submitted through the Website does not create a
+                  client relationship, oblige any entity to accept work or
+                  determine the entity that will provide services.
                 </p>
                 <p>
-                  Where a client needs an excluded local execution service, the client appoints the
-                  appropriately qualified provider directly under a separate contract. The company
-                  identified in the Engagement Documentation may make an introduction or provide
-                  distinct advisory work, but it does not become responsible for the separate
-                  provider’s advice, performance, fees, timetable, acceptance decision or outcome.
+                  After an initial assessment, Artlex Global LTD may decide
+                  whether it can offer its own services. With the appropriate
+                  notice and lawful data-sharing basis, it may also introduce
+                  the enquirer to Artlex Consult s.r.o. or to an independent
+                  provider. A referral, shared branding, preliminary discussion
+                  or involvement in a call does not make the recipient a party
+                  to another entity's engagement.
                 </p>
                 <p>
-                  Neither company accepts an instruction merely because it is labelled advisory
-                  where the actual activity would place it within a regulated, supervised or
-                  reserved-service perimeter that it is not authorised to enter.
-                </p>
-              </section>
-              <section id="s-professional-status">
-                <div className="caps">1.6</div>
-                <h2>Professional status</h2>
-                <p>
-                  Artlex Global LTD is not a firm of solicitors and is not authorised or regulated
-                  by the Solicitors Regulation Authority. Artlex Consult s.r.o. is not a Czech law
-                  firm (advokátní kancelář). Neither company carries on a reserved legal activity
-                  for which it lacks the required authorisation. Unless expressly confirmed
-                  otherwise for a particular engagement, communications with either company should
-                  not be assumed to attract legal professional privilege.
+                  For every accepted matter, the Contracting Entity is
+                  exclusively the legal entity expressly named as the provider
+                  in the applicable Engagement Letter. That entity is the
+                  Client's sole contractual counterparty for the agreed scope.
+                  The{" "}
+                  <a href="/terms-of-business/">General Terms of Business</a>{" "}
+                  apply only when incorporated into that Engagement Letter.
                 </p>
               </section>
-              <section id="s-risk-checks-and-complaints">
-                <div className="caps">1.7</div>
-                <h2>Risk checks and complaints</h2>
+              <section id="s-artlex-global-ltd-services">
+                <div className="caps">4</div>
+                <h2>Artlex Global LTD services</h2>
                 <p>
-                  The application of the Money Laundering Regulations depends on the actual
-                  activities carried on. The proposed Contracting Entity may carry out proportionate
-                  client-acceptance, ownership, sanctions, conflict, fraud-risk and integrity checks
-                  before and during an engagement.
+                  Artlex Global LTD provides international non-reserved legal,
+                  regulatory, compliance and business advisory only within the
+                  scope it expressly agrees in writing. Depending on the
+                  engagement, services may include regulatory analysis,
+                  compliance frameworks, governance, privacy advisory, AML/CFT
+                  and financial-crime advisory, licensing strategy and
+                  readiness, commercial-contract support, due diligence,
+                  training and market-entry assessments.
                 </p>
                 <p>
-                  Services are intended for businesses, organisations and professionals acting in
-                  the course of business. Complaints may be sent to{" "}
-                  <a href="mailto:info@lexarta.co?subject=Complaint">info@lexarta.co</a> with the
-                  subject line “Complaint”.
+                  The Engagement Letter, not Website content, defines the exact
+                  scope, jurisdiction, deliverables, assumptions, timetable,
+                  fees and responsible Contracting Entity.
                 </p>
               </section>
-              <section id="s-data-protection-and-intellectual-property">
-                <div className="caps">1.8</div>
-                <h2>Data protection and intellectual property</h2>
+              <section id="s-professional-perimeter-and-excluded-services">
+                <div className="caps">5</div>
+                <h2>Professional perimeter and excluded services</h2>
                 <p>
-                  Artlex Global LTD is the controller of personal data collected through this
-                  Website. Artlex Consult s.r.o. acts as a separate controller for its own proposed
-                  and accepted engagements. See the <a href="/privacy/">Privacy Policy</a> and{" "}
-                  <a href="/cookies/">Cookie Policy</a>.
+                  Artlex Global LTD is not a firm authorised or regulated by the
+                  Solicitors Regulation Authority. It does not undertake a
+                  reserved legal activity or other regulated professional
+                  activity for which it lacks the required entitlement or
+                  authorisation.
                 </p>
                 <p>
-                  © 2026 Artlex Global LTD. All rights reserved. LEX ARTA and the LEX ARTA logo are
-                  owned by Artlex Global LTD.
+                  Artlex Global LTD does not undertake or sell in its own name:
+                </p>
+                <ul>
+                  <li>
+                    reserved legal activities, unless it has the required
+                    entitlement and the Engagement Letter expressly states that
+                    it will undertake them;
+                  </li>
+                  <li>
+                    regulated financial, investment, payment, e-money,
+                    crypto-asset, insurance or fiduciary services;
+                  </li>
+                  <li>
+                    personal investment recommendations, arranging deals in
+                    investments or issuing or approving financial promotions,
+                    unless lawfully entitled and expressly agreed;
+                  </li>
+                  <li>
+                    company formation, registered-office, business-address,
+                    mail-handling, nominee, corporate-officer or trustee
+                    services;
+                  </li>
+                  <li>
+                    client money, crypto-assets, share capital or
+                    third-party-payment handling; or
+                  </li>
+                  <li>
+                    tax advice, bookkeeping, accountancy, statutory audit,
+                    insolvency-practitioner services, bank-account-opening
+                    representation or bank-account operation.
+                  </li>
+                </ul>
+              </section>
+              <section id="s-subcontractors-and-direct-providers">
+                <div className="caps">6</div>
+                <h2>Subcontractors and direct providers</h2>
+                <p>
+                  For a defined part of its own permitted advisory scope, Artlex
+                  Global LTD may use a suitably qualified subcontractor in any
+                  jurisdiction where lawful and appropriate. Artlex Global LTD
+                  remains responsible to its Client for the subcontracted part
+                  of its own agreed scope.
+                </p>
+                <p>
+                  Where a Client needs a local, reserved, regulated or other
+                  service outside Artlex Global LTD's agreed scope, Artlex
+                  Global LTD may identify or introduce an independent provider.
+                  The Client decides whether to appoint that provider under a
+                  separate direct contract. The independent provider is
+                  responsible for its own scope, advice, fees, onboarding
+                  decision, acts, omissions and outcome.
+                </p>
+                <p>
+                  Subcontracting does not permit Artlex Global LTD to bypass
+                  legal reservations, authorisation requirements or local
+                  professional rules.
+                </p>
+              </section>
+              <section id="s-client-acceptance-and-risk-controls">
+                <div className="caps">7</div>
+                <h2>Client acceptance and risk controls</h2>
+                <p>
+                  Artlex Global LTD may carry out proportionate conflict,
+                  identity, ownership, sanctions, fraud-risk, integrity and
+                  client-acceptance checks before and during an engagement. It
+                  may decline, suspend or end work where required information is
+                  not provided, continuation would be unlawful, or an
+                  unacceptable legal, sanctions, financial-crime, conflict or
+                  reputational risk is identified.
+                </p>
+              </section>
+              <section id="s-website-information">
+                <div className="caps">8</div>
+                <h2>Website information</h2>
+                <p>
+                  Website content, insights, presentations, initial calls and
+                  marketing communications are general information only. They
+                  are not individual legal, regulatory, tax, accounting,
+                  investment or other professional advice and must not be relied
+                  on without an engagement based on the relevant facts.
+                </p>
+                <p>
+                  No licence, regulatory approval, bank or payment account,
+                  provider onboarding, financing, third-party decision,
+                  timetable or commercial result is guaranteed. Communications
+                  with Artlex Global LTD should not be assumed to attract legal
+                  professional privilege.
+                </p>
+              </section>
+              <section id="s-eu-gdpr-representative">
+                <div className="caps">9</div>
+                <h2>EU GDPR representative</h2>
+                <p>
+                  For processing to which Article 3(2) of Regulation (EU)
+                  2016/679 applies, Artlex Global LTD has appointed the
+                  following representative in the European Union under Article
+                  27 GDPR:
+                </p>
+                <p>
+                  Artlex Consult s.r.o.
+                  <br />
+                  Kurzova 2222/16, Stodůlky, 155 00 Praha 5, Czech Republic
+                  <br />
+                  EU representative contact:{" "}
+                  <a href="mailto:privacy@lexarta.co">privacy@lexarta.co</a>
+                </p>
+                <p>
+                  The EU representative may be contacted, in addition to or
+                  instead of Artlex Global LTD, by data subjects and supervisory
+                  authorities on matters relating to that processing. This
+                  limited statutory role does not make Artlex Consult s.r.o. a
+                  party to Artlex Global LTD engagements, a joint controller, a
+                  processor, a branch, subsidiary or commercial agent of Artlex
+                  Global LTD.
+                </p>
+              </section>
+              <section id="s-intellectual-property-privacy-and-contact">
+                <div className="caps">10</div>
+                <h2>Intellectual property, privacy and contact</h2>
+                <p>
+                  Website content, layouts and original materials are owned by
+                  or licensed to Artlex Global LTD. Access to the Website does
+                  not grant any right to use the LEX ARTA® brand or Website
+                  materials.
+                </p>
+                <p>
+                  Personal-data processing is explained in the{" "}
+                  <a href="/privacy/">Privacy Notice</a>. Cookies and similar
+                  technologies are explained in the{" "}
+                  <a href="/cookies/">Cookie Policy</a>. Questions about this
+                  Notice may be sent to{" "}
+                  <a href="mailto:info@lexarta.co">info@lexarta.co</a>.
                 </p>
               </section>
             </article>
@@ -211,7 +329,8 @@ export default function Page() {
               <div>
                 <h2>Questions about this page?</h2>
                 <p>
-                  Contact Artlex Global LTD at <a href="mailto:info@lexarta.co">info@lexarta.co</a>.
+                  Contact Artlex Global LTD at{" "}
+                  <a href="mailto:info@lexarta.co">info@lexarta.co</a>.
                 </p>
               </div>
               <div className="final-cta-actions">
