@@ -19,7 +19,9 @@ function isActive(path: string, href: string): boolean {
   if (!clean.startsWith("/")) return false;
   if (clean === "/") return path === "/";
   const withSlash = clean.endsWith("/") ? clean : `${clean}/`;
-  return isServicesLink(clean) ? path.startsWith(withSlash) : path === withSlash;
+  return isServicesLink(clean)
+    ? path.startsWith(withSlash)
+    : path === withSlash;
 }
 
 /** Fills the {company} and {number} placeholders used in footer texts. */
@@ -93,46 +95,50 @@ export function SiteHeader({
       >
         {layout.headerLinks.map((link, i) =>
           isServicesLink(link.href) ? (
-        <div key={`${i}-${link.href}`} className="services-nav" ref={servicesNavRef}>
-          <div className="services-nav-label">
-            <a
-              href={link.href}
-              className={isActive(path, link.href) ? "active" : ""}
+            <div
+              key={`${i}-${link.href}`}
+              className="services-nav"
+              ref={servicesNavRef}
             >
-              {link.label}
-            </a>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Show services"
-              aria-expanded={services}
-              onClick={() => setServices((s) => !s)}
-            >
-              <ChevronDown size={12} />
-            </Button>
-          </div>
-          {services && (
-            <div className="mega-menu">
-              <a className="all-services" href="/services/">
-                All services <ArrowUpRight size={16} />
-              </a>
-              <div className="mega-grid">
-                {groups.map((group) => (
-                  <div key={group.href}>
-                    <a className="mega-heading" href={group.href}>
-                      {group.label}
-                    </a>
-                    {group.links.map((link) => (
-                      <a key={link.href} href={link.href}>
-                        {link.label}
-                      </a>
+              <div className="services-nav-label">
+                <a
+                  href={link.href}
+                  className={isActive(path, link.href) ? "active" : ""}
+                >
+                  {link.label}
+                </a>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Show services"
+                  aria-expanded={services}
+                  onClick={() => setServices((s) => !s)}
+                >
+                  <ChevronDown size={12} />
+                </Button>
+              </div>
+              {services && (
+                <div className="mega-menu">
+                  <a className="all-services" href="/services/">
+                    All services <ArrowUpRight size={16} />
+                  </a>
+                  <div className="mega-grid">
+                    {groups.map((group) => (
+                      <div key={group.href}>
+                        <a className="mega-heading" href={group.href}>
+                          {group.label}
+                        </a>
+                        {group.links.map((link) => (
+                          <a key={link.href} href={link.href}>
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
                     ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
           ) : (
             <a
               key={`${i}-${link.href}`}
@@ -142,6 +148,11 @@ export function SiteHeader({
               {link.label}
             </a>
           ),
+        )}
+        {layout.cta.label && (
+          <a className="mobile-nav-cta" href={layout.cta.href}>
+            {layout.cta.label} <ArrowUpRight size={16} />
+          </a>
         )}
       </nav>
       {layout.cta.label && (

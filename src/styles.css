@@ -445,3 +445,53 @@
 .credentials-grid { flex:1; min-width:0; --cols:2; }
 .credential-label { display:block; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--primary); margin-bottom:14px; }
 @media(max-width:800px) { .credentials-intro { flex-basis:100%; } }
+
+/* ---- Mobile layout (kept last so it wins over the base rules above) ---- */
+.mobile-nav-cta { display:none; }
+.insights-hero-art { overflow:hidden; }
+@media(max-width:800px) {
+  .page-content :is(h1,h2,h3,h4,p,li,td,th,a,span,strong,dd,dt,blockquote) { overflow-wrap:break-word; }
+  .reg-grid,.when-grid,.lx-advisory-grid,.crypto-grid { grid-template-columns:1fr; }
+  .sector-grid,.fee-grid { grid-template-columns:1fr; gap:32px; }
+  .process,.process-strip,.review-grid,.component-list,.regulatory-grid,.outcome-panel { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .comparison-grid { grid-template-columns:1fr; }
+  .final-cta-actions { flex-wrap:wrap; flex-shrink:1; max-width:100%; }
+  :is(.btn-row,.hero-actions,.final-cta-actions,.price-box) > a,
+  .page-content p > a.inline-flex { max-width:100%; white-space:normal; text-align:center; line-height:1.3; height:auto; min-height:44px; padding-block:10px; }
+  .page-content :is(.legal-table,table) { display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+@media(max-width:520px) {
+  .lx-basic h1,.insights-heading h1 { font-size:36px; line-height:1.1; }
+  .process,.process-strip,.review-grid,.component-list,.regulatory-grid,.regulatory-grid.two,.comparison-grid,.outcome-panel,.when-grid { grid-template-columns:1fr; border-left:0; }
+  .step { border-right:0; }
+  .process-step,.review-item,.component,.regulatory-item,.when-card { border-right:0; min-height:0; }
+  .price-box,.crypto-panel { padding:24px; }
+  :is(.btn-row,.hero-actions,.final-cta-actions) { width:100%; }
+  :is(.btn-row,.hero-actions,.final-cta-actions) > a { flex:1 1 100%; justify-content:center; }
+}
+@media(max-width:420px) {
+  .site-header { padding:0 16px; gap:10px; height:68px; }
+  .primary-nav.mobile-open { top:68px; max-height:calc(100dvh - 68px); padding:10px 16px 18px; }
+  .header-cta { display:none !important; }
+  .mobile-toggle { margin-left:auto; }
+  .primary-nav.mobile-open .mobile-nav-cta { display:flex; align-items:center; justify-content:center; gap:6px; margin-top:12px; min-height:46px; padding:10px 16px; border-radius:4px; background:var(--primary); color:var(--primary-foreground, #fff); font-size:14px; font-weight:600; text-align:center; }
+  .brand-name { font-size:20px; }
+  .container,.wrap,.fx-wrap { padding:0 18px; }
+  .jurisdiction-container { width:calc(100% - 36px); }
+  .mica-jump { top:68px; }
+  .mica-jump-links { margin:0 -18px; padding:0 18px; }
+  .page-content section { padding:44px 0; }
+  .homepage .hero,.page-content .hero { min-height:0; padding:40px 0 44px; }
+  .inner-page .hero { min-height:0; }
+  .homepage .hero h1 { font-size:34px; line-height:1.1; }
+  .hero h1,.inner-page .hero h1,.lx-form-header h1,.lx-basic h1,.insights-heading h1,.insight-article-hero h1 { font-size:31px; line-height:1.12; }
+  .hero-lead,.hero-copy > p { font-size:14.5px; max-width:none; }
+  .section-head h2,.homepage .problem-section .section-head h2,.distinction h2,.intro-grid h2,.page-content h2:not(.toc h2) { font-size:26px; line-height:1.18; }
+  .page-content h3 { font-size:19px; line-height:1.25; }
+  .lx-form-step legend { font-size:24px; }
+  .price { font-size:28px; }
+  .problem-card,.workstream,.card,.related-card,.jurisdiction-card { padding:20px; }
+  .lx-site-footer { padding:44px 18px 28px; }
+  .lx-footer-shell > :nth-child(n) { flex:0 0 100%; }
+  .lx-consultation { padding:36px 18px 56px; }
+}

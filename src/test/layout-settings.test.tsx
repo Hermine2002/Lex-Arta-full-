@@ -17,7 +17,7 @@ describe("editable header & footer", () => {
     );
     const nav = [
       ...container.querySelectorAll(
-        ".primary-nav > a, .services-nav-label > a",
+        ".primary-nav > a:not(.mobile-nav-cta), .services-nav-label > a",
       ),
     ];
     expect(nav.map((a) => a.textContent)).toEqual([
