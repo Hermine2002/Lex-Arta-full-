@@ -9,7 +9,7 @@ const NAV = [
   { to: "/admin/insights", label: "Insights", icon: "✦", exact: false },
   { to: "/admin/media", label: "Media", icon: "🖼", exact: false },
   { to: "/admin/pages", label: "Pages & SEO", icon: "❏", exact: false },
-  { to: "/admin/content", label: "Text editor", icon: "✎", exact: false },
+  { to: "/admin/content", label: "Page editor", icon: "✎", exact: false },
   {
     to: "/admin/users",
     label: "Users & access",

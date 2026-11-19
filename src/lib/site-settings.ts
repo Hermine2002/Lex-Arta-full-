@@ -14,6 +14,26 @@ export type ContactSettings = {
   companyNumber: string;
   copyright: string;
 };
+/** Header and footer content that is not contact data. */
+export type LayoutSettings = {
+  logo: string;
+  logoAlt: string;
+  brandName: string;
+  brandTagline: string;
+  /** Main navigation. An item pointing at /services/ shows the services drop-down. */
+  headerLinks: NavLink[];
+  cta: NavLink;
+  footerTagline: string;
+  /** Footer introduction. "{company}" is replaced by the legal company name. */
+  footerAbout: string;
+  footerMarkets: string;
+  footerCompanyTitle: string;
+  footerCompany: NavLink[];
+  footerLegalTitle: string;
+  footerLegal: NavLink[];
+  /** Small print under the copyright. "{company}" and "{number}" are filled in. */
+  footerNote: string;
+};
 export type SiteSettings = {
   socials: {
     instagram: string;
@@ -25,9 +45,75 @@ export type SiteSettings = {
   theme: { primary: string; gold: string; ink: string };
   nav: NavGroup[] | null;
   contact: ContactSettings;
+  layout: LayoutSettings;
   /** URL to POST each new enquiry to (Slack/Make/Zapier/etc.). Empty = off. */
   notifyWebhook: string;
 };
+
+export const DEFAULT_LAYOUT: LayoutSettings = {
+  logo: "/images/lex-arta-logo.png",
+  logoAlt: "LEX ARTA logo",
+  brandName: "LEX ARTA",
+  brandTagline: "LEGAL & COMPLIANCE",
+  headerLinks: [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services/" },
+    { label: "Insights", href: "/insights/" },
+    { label: "About", href: "/about/" },
+    { label: "Contact", href: "/contact/" },
+  ],
+  cta: { label: "Book a Consultation", href: "/book-a-consultation/" },
+  footerTagline: "International legal, regulatory\n& compliance advisory",
+  footerAbout:
+    "LEX ARTA is a boutique international advisory brand operated by {company}, providing strategic legal, regulatory and compliance advice to regulated and cross-border businesses across jurisdictions.",
+  footerMarkets: "LONDON / UNITED KINGDOM / INTERNATIONAL",
+  footerCompanyTitle: "Company",
+  footerCompany: [
+    { label: "About", href: "/about/" },
+    { label: "Expertise", href: "/services/" },
+    { label: "Team", href: "/about/#team" },
+    { label: "Insights", href: "/insights/" },
+    { label: "Contact", href: "/contact/" },
+  ],
+  footerLegalTitle: "Legal",
+  footerLegal: [
+    { label: "Legal Notice", href: "/legal-notice/" },
+    { label: "Terms of Use", href: "/terms/" },
+    { label: "Terms of Business", href: "/terms-of-business/" },
+    { label: "Privacy Notice", href: "/privacy/" },
+    { label: "Cookie Policy", href: "/cookies/" },
+    { label: "Disclaimer", href: "/disclaimer/" },
+  ],
+  footerNote:
+    "LEX ARTA is a professional services brand owned by {company}. This website is operated by {company}{number}. Website content is general information only and does not constitute professional advice.",
+};
+
+const isLinkList = (v: unknown): v is NavLink[] =>
+  Array.isArray(v) &&
+  v.every(
+    (l) =>
+      l &&
+      typeof l === "object" &&
+      typeof (l as NavLink).label === "string" &&
+      typeof (l as NavLink).href === "string",
+  );
+
+function mergeLayout(v: Partial<LayoutSettings> | undefined): LayoutSettings {
+  const out: LayoutSettings = { ...DEFAULT_LAYOUT };
+  if (!v || typeof v !== "object") return out;
+  for (const key of Object.keys(DEFAULT_LAYOUT) as (keyof LayoutSettings)[]) {
+    const value = v[key];
+    const fallback = DEFAULT_LAYOUT[key];
+    if (typeof fallback === "string" && typeof value === "string")
+      (out as Record<string, unknown>)[key] = value;
+    else if (Array.isArray(fallback) && isLinkList(value))
+      (out as Record<string, unknown>)[key] = value;
+  }
+  const cta = v.cta;
+  if (cta && typeof cta.label === "string" && typeof cta.href === "string")
+    out.cta = { label: cta.label, href: cta.href };
+  return out;
+}
 
 export const DEFAULT_SOCIALS = {
   instagram: "https://www.instagram.com/artlexconsult/",
@@ -53,6 +139,7 @@ export const defaultSettings: SiteSettings = {
   theme: { primary: "", gold: "", ink: "" },
   nav: null,
   contact: { ...DEFAULT_CONTACT },
+  layout: DEFAULT_LAYOUT,
   notifyWebhook: "",
 };
 
@@ -68,6 +155,7 @@ export function mergeSettings(
     theme: { ...defaultSettings.theme, ...(v.theme ?? {}) },
     nav: Array.isArray(v.nav) ? v.nav : null,
     contact: { ...DEFAULT_CONTACT, ...(v.contact ?? {}) },
+    layout: mergeLayout(v.layout),
     notifyWebhook: typeof v.notifyWebhook === "string" ? v.notifyWebhook : "",
   };
 }

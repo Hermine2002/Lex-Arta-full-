@@ -65,9 +65,17 @@ export function SiteLayout() {
         Skip to content
       </a>
       {css && <style>{css}</style>}
-      <SiteHeader path={path} groups={settings.nav ?? undefined} />
+      <SiteHeader
+        path={path}
+        groups={settings.nav ?? undefined}
+        layout={settings.layout}
+      />
       <Outlet />
-      <SiteFooter contact={settings.contact} socials={settings.socials} />
+      <SiteFooter
+        contact={settings.contact}
+        socials={settings.socials}
+        layout={settings.layout}
+      />
       <CookieChoices />
     </div>
   );

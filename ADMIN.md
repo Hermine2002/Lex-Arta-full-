@@ -50,15 +50,25 @@ write and are git-ignored.
   an image, or delete ones no longer needed.
 - **Pages & SEO** – browser title and meta description of any page (the full raw HTML is
   tucked behind an "Advanced" toggle for developers); reset to the bundled version.
-- **Text editor** – edit each heading / paragraph / list item / button label without
-  touching HTML.
+- **Page editor** – three tabs per page, with a search box:
+  - **Text** – every piece of visible text: headings, paragraphs, list items, small
+    labels above headings, chips, button and card titles, prices… (each shown with its
+    tag and CSS class so it is easy to recognise).
+  - **Links** – change any link's address and whether it opens in a new tab; broken
+    internal links are flagged.
+  - **Images** – change an image's address or alt text, or upload a replacement.
+
+  Saving stores a full copy of that page. Later changes made in the code will not show
+  on that page until you press **Reset page**.
 - **Users & access** _(owners only)_ – add / remove administrators, set roles
   (owner / editor), reset a user's password, see last-login times, review the activity
   log, and sign out of all your devices.
 - **Site settings** – **Contact & company** (name, email, phone, address, reg. number,
   copyright — drives the footer and the consultation form's destination), an **enquiry
-  notification webhook**, social links, brand colours, the services mega-menu, and a
-  **Your password** panel. Header and footer are rendered once in the root layout, so a
+  notification webhook**, social links, brand colours, the services mega-menu,
+  **Header & footer** (logo, brand name and tagline, main menu, header button, footer
+  texts and both footer link columns; `{company}` / `{number}` placeholders fill in the
+  company details), and a **Your password** panel. Header and footer are rendered once in the root layout, so a
   change applies to all pages.
 
 ## Data & persistence

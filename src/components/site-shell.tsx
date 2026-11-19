@@ -3,14 +3,46 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowUpRight, ChevronDown, Menu, X, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { shared } from "@/data/site-shared";
-import type { ContactSettings, NavGroup } from "@/lib/site-settings";
+import { resolveImageUrl } from "@/lib/assets";
+import {
+  DEFAULT_LAYOUT,
+  type ContactSettings,
+  type LayoutSettings,
+  type NavGroup,
+} from "@/lib/site-settings";
+
+const isServicesLink = (href: string) =>
+  href.replace(/\/+$/, "") === "/services";
+
+function isActive(path: string, href: string): boolean {
+  const clean = href.split("#")[0]!.split("?")[0]!;
+  if (!clean.startsWith("/")) return false;
+  if (clean === "/") return path === "/";
+  const withSlash = clean.endsWith("/") ? clean : `${clean}/`;
+  return isServicesLink(clean) ? path.startsWith(withSlash) : path === withSlash;
+}
+
+/** Fills the {company} and {number} placeholders used in footer texts. */
+function fill(text: string, contact: ContactSettings): string {
+  return text
+    .split("{company}")
+    .join(contact.companyName)
+    .split("{number}")
+    .join(
+      contact.companyNumber
+        ? `, registered in England and Wales under company number ${contact.companyNumber}`
+        : "",
+    );
+}
 
 export function SiteHeader({
   path,
   groups = shared.groups as NavGroup[],
+  layout = DEFAULT_LAYOUT,
 }: {
   path: string;
   groups?: NavGroup[] | undefined;
+  layout?: LayoutSettings | undefined;
 }) {
   const [menu, setMenu] = useState(false);
   const [services, setServices] = useState(false);
@@ -41,33 +73,33 @@ export function SiteHeader({
   }, [services]);
   return (
     <header className="site-header">
-      <a href="/" className="brand" aria-label="LEX ARTA home">
+      <a href="/" className="brand" aria-label={`${layout.brandName} home`}>
         <span className="">
           <img
-            alt="LEX ARTA logo"
+            alt={layout.logoAlt}
             loading="lazy"
-            src="/images/lex-arta-logo.png"
+            src={resolveImageUrl(layout.logo)}
           />
           <span />
         </span>
         <span className="brand-name">
-          LEX ARTA<small>LEGAL & COMPLIANCE</small>
+          {layout.brandName}
+          <small>{layout.brandTagline}</small>
         </span>
       </a>
       <nav
         className={menu ? "primary-nav mobile-open" : "primary-nav"}
         aria-label="Main navigation"
       >
-        <a href="/" className={path === "/" ? "active" : ""}>
-          Home
-        </a>
-        <div className="services-nav" ref={servicesNavRef}>
+        {layout.headerLinks.map((link, i) =>
+          isServicesLink(link.href) ? (
+        <div key={`${i}-${link.href}`} className="services-nav" ref={servicesNavRef}>
           <div className="services-nav-label">
             <a
-              href="/services/"
-              className={path.startsWith("/services") ? "active" : ""}
+              href={link.href}
+              className={isActive(path, link.href) ? "active" : ""}
             >
-              Services
+              {link.label}
             </a>
             <Button
               variant="ghost"
@@ -101,21 +133,24 @@ export function SiteHeader({
             </div>
           )}
         </div>
-        <a href="/insights/" className={path === "/insights/" ? "active" : ""}>
-          Insights
-        </a>
-        <a href="/about/" className={path === "/about/" ? "active" : ""}>
-          About
-        </a>
-        <a href="/contact/" className={path === "/contact/" ? "active" : ""}>
-          Contact
-        </a>
+          ) : (
+            <a
+              key={`${i}-${link.href}`}
+              href={link.href}
+              className={isActive(path, link.href) ? "active" : ""}
+            >
+              {link.label}
+            </a>
+          ),
+        )}
       </nav>
-      <Button asChild className="header-cta" size="lg">
-        <a href="/book-a-consultation/">
-          Book a Consultation <ArrowUpRight />
-        </a>
-      </Button>
+      {layout.cta.label && (
+        <Button asChild className="header-cta" size="lg">
+          <a href={layout.cta.href}>
+            {layout.cta.label} <ArrowUpRight />
+          </a>
+        </Button>
+      )}
       <Button
         className="mobile-toggle"
         size="icon"
@@ -211,10 +246,17 @@ function stripProtocol(url: string): string {
 export function SiteFooter({
   contact,
   socials,
+  layout = DEFAULT_LAYOUT,
 }: {
   contact: ContactSettings;
   socials?: Record<string, string> | undefined;
+  layout?: LayoutSettings | undefined;
 }) {
+  const taglineLines = layout.footerTagline.split("\n");
+  const markets = layout.footerMarkets
+    .split("/")
+    .map((m) => m.trim())
+    .filter(Boolean);
   const addressLines = contact.address.split("\n").filter((l) => l.trim());
   const social = FOOTER_SOCIALS.map((s) => ({
     ...s,
@@ -227,29 +269,39 @@ export function SiteFooter({
         <div className="lx-footer-brand-column">
           <a className="lx-footer-brand" href="/">
             <img
-              alt="LEX ARTA logo"
+              alt={layout.logoAlt}
               loading="lazy"
-              src="/images/lex-arta-logo.png"
+              src={resolveImageUrl(layout.logo)}
             />
             <span>
-              <strong>LEX ARTA</strong>
+              <strong>{layout.brandName}</strong>
               <small>
-                International legal, regulatory
-                <br />
-                &amp; compliance advisory
+                {taglineLines.map((line, i) => (
+                  <span key={i}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </small>
             </span>
           </a>
           <span className="lx-footer-rule" />
-          <p>
-            LEX ARTA is a boutique international advisory brand operated by{" "}
-            {contact.companyName}, providing strategic legal, regulatory and
-            compliance advice to regulated and cross-border businesses across
-            jurisdictions.
-          </p>
-          <div className="lx-footer-markets">
-            LONDON <i>/</i> UNITED KINGDOM <i>/</i> INTERNATIONAL
-          </div>
+          {layout.footerAbout && <p>{fill(layout.footerAbout, contact)}</p>}
+          {markets.length > 0 && (
+            <div className="lx-footer-markets">
+              {markets.map((m, i) => (
+                <span key={i}>
+                  {i > 0 && (
+                    <>
+                      {" "}
+                      <i>/</i>{" "}
+                    </>
+                  )}
+                  {m}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <div className="lx-footer-contact">
           <h2>Contact</h2>
@@ -302,37 +354,27 @@ export function SiteFooter({
           )}
         </div>
         <div className="lx-footer-company">
-          <h2>Company</h2>
+          <h2>{layout.footerCompanyTitle}</h2>
           <span className="lx-footer-rule" />
-          <a href="/about/">About</a>
-          <a href="/services/">Expertise</a>
-          <a href="/about/#team">Team</a>
-          <a href="/insights/">Insights</a>
-          <a href="/contact/">Contact</a>
+          {layout.footerCompany.map((l, i) => (
+            <a key={i} href={l.href}>
+              {l.label}
+            </a>
+          ))}
         </div>
         <div className="lx-footer-legal">
-          <h2>Legal</h2>
+          <h2>{layout.footerLegalTitle}</h2>
           <span className="lx-footer-rule" />
-          <a href="/legal-notice/">Legal Notice</a>
-          <a href="/terms/">Terms of Use</a>
-          <a href="/terms-of-business/">Terms of Business</a>
-          <a href="/privacy/">Privacy Policy</a>
-          <a href="/cookies/">Cookie Policy</a>
-          <a href="/disclaimer/">Disclaimer</a>
+          {layout.footerLegal.map((l, i) => (
+            <a key={i} href={l.href}>
+              {l.label}
+            </a>
+          ))}
         </div>
       </div>
       <div className="lx-footer-bottom">
         <span>{contact.copyright}</span>
-        <p>
-          LEX ARTA is a professional services brand owned by{" "}
-          {contact.companyName}. This website is operated by{" "}
-          {contact.companyName}
-          {contact.companyNumber
-            ? `, registered in England and Wales under company number ${contact.companyNumber}`
-            : ""}
-          . Website content is general information only and does not constitute
-          professional advice.
-        </p>
+        {layout.footerNote && <p>{fill(layout.footerNote, contact)}</p>}
       </div>
     </footer>
   );
