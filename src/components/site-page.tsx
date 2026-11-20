@@ -82,6 +82,12 @@ export function SitePage({ path }: { path: string }) {
     async function submit(e: Event) {
       e.preventDefault();
       if (!form) return;
+      // Enter (or "Go" on a phone keyboard) on an earlier step means Continue:
+      // check only this step, then open the next one.
+      if (current < steps.length - 1) {
+        if (valid(current)) show(current + 1);
+        return;
+      }
       for (let i = 0; i < steps.length; i++) {
         if (!valid(i)) {
           show(i);

@@ -104,6 +104,13 @@ export function SiteHeader({
                 <a
                   href={link.href}
                   className={isActive(path, link.href) ? "active" : ""}
+                  onClick={(e) => {
+                    // In the open mobile menu, tapping "Services" opens the full
+                    // list instead of leaving; "All services" in it still links there.
+                    if (!menu) return;
+                    e.preventDefault();
+                    setServices((s) => !s);
+                  }}
                 >
                   {link.label}
                 </a>
